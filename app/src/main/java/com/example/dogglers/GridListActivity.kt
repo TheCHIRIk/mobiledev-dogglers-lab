@@ -17,7 +17,7 @@ package com.example.dogglers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.dogglers.adapter.DogCardAdapter
+import com.example.dogglers.adapter.CarCardAdapter
 import com.example.dogglers.const.Layout
 import com.example.dogglers.databinding.ActivityGridListBinding
 
@@ -30,7 +30,7 @@ class GridListActivity : AppCompatActivity() {
         binding = ActivityGridListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.gridRecyclerView.adapter = DogCardAdapter(
+        binding.gridRecyclerView.adapter = CarCardAdapter(
             applicationContext,
             Layout.GRID
         )

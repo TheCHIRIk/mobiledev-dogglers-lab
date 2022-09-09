@@ -17,7 +17,7 @@ package com.example.dogglers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.dogglers.adapter.DogCardAdapter
+import com.example.dogglers.adapter.CarCardAdapter
 import com.example.dogglers.const.Layout
 import com.example.dogglers.databinding.ActivityVerticalListBinding
 
@@ -30,7 +30,7 @@ class VerticalListActivity : AppCompatActivity() {
         binding = ActivityVerticalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.verticalRecyclerView.adapter = DogCardAdapter(
+        binding.verticalRecyclerView.adapter = CarCardAdapter(
             applicationContext,
             Layout.VERTICAL
         )

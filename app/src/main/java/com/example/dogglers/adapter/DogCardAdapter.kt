@@ -16,9 +16,13 @@
 package com.example.dogglers.adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dogglers.R
+import com.example.dogglers.const.Layout
 import com.example.dogglers.model.Car
 import com.example.dogglers.data.DataSource
 
@@ -31,7 +35,6 @@ class CarCardAdapter(
     private val layout: Int
 ): RecyclerView.Adapter<CarCardAdapter.CarCardViewHolder>() {
 
-    // TODO: Initialize the data using the List found in data/DataSource
     val cars: List<Car> = DataSource.cars
 
         /**
@@ -39,31 +42,36 @@ class CarCardAdapter(
      */
     class CarCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         // TODO: Declare and initialize all of the list item UI components
+        @DrawableRes var carImage: Int = 0;
+        var carMake: String = "default_make";
+        var carYearReleased: String = "0 BC";
+        var carModel: String = "Dodge";
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarCardViewHolder {
         // TODO: Use a conditional to determine the layout type and set it accordingly.
         //  if the layout variable is Layout.GRID the grid list item should be used. Otherwise the
         //  the vertical/horizontal list item should be used.
-
+        return when (viewType){
+            Layout.GRID -> CarCardViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.grid_list_item, parent, false))
+            Layout.VERTICAL, Layout.HORIZONTAL -> CarCardViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.vertical_horizontal_list_item, parent, false))
+            else -> throw IllegalArgumentException("Unsupported view type $viewType")
+        }
         // TODO Inflate the layout
 
         // TODO: Null should not be passed into the view holder. This should be updated to reflect
         //  the inflated layout.
-        return CarCardViewHolder(null)
     }
 
-    override fun getItemCount(): Int = 0 // TODO: return the size of the data set instead of 0
+    override fun getItemCount(): Int = cars.size
 
     override fun onBindViewHolder(holder: CarCardViewHolder, position: Int) {
-        // TODO: Get the data at the current position
-        // TODO: Set the image resource for the current dog
-        // TODO: Set the text for the current dog's name
-        // TODO: Set the text for the current dog's age
+        val car: Car = cars[position]
+        holder.carMake = car.make
+        holder.carImage = car.imageResourceId
+        holder.carYearReleased = car.yearReleased
         val resources = context?.resources
-        // TODO: Set the text for the current dog's hobbies by passing the hobbies to the
-        //  R.string.dog_hobbies string constant.
-        //  Passing an argument to the string resource looks like:
-        //  resources?.getString(R.string.dog_hobbies, dog.hobbies)
+        resources?.getString(R.string.car_yearReleased, car.yearReleased)
+        resources?.getString(R.string.car_model, car.model)
     }
 }

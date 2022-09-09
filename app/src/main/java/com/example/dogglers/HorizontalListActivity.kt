@@ -17,7 +17,7 @@ package com.example.dogglers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.dogglers.adapter.DogCardAdapter
+import com.example.dogglers.adapter.CarCardAdapter
 import com.example.dogglers.const.Layout
 import com.example.dogglers.databinding.ActivityHorizontalListBinding
 
@@ -30,7 +30,7 @@ class HorizontalListActivity : AppCompatActivity() {
         binding = ActivityHorizontalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.horizontalRecyclerView.adapter = DogCardAdapter(
+        binding.horizontalRecyclerView.adapter = CarCardAdapter(
             applicationContext,
             Layout.HORIZONTAL
         )
