@@ -19,26 +19,28 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dogglers.model.Car
 
 /**
  * Adapter to inflate the appropriate list item layout and populate the view with information
  * from the appropriate data source
  */
-class DogCardAdapter(
+class CarCardAdapter(
     private val context: Context?,
     private val layout: Int
-): RecyclerView.Adapter<DogCardAdapter.DogCardViewHolder>() {
+): RecyclerView.Adapter<CarCardAdapter.CarCardViewHolder>() {
 
     // TODO: Initialize the data using the List found in data/DataSource
+    val cars: List<Car> = listOf()
 
-    /**
+        /**
      * Initialize view elements
      */
-    class DogCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
+    class CarCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         // TODO: Declare and initialize all of the list item UI components
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogCardViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarCardViewHolder {
         // TODO: Use a conditional to determine the layout type and set it accordingly.
         //  if the layout variable is Layout.GRID the grid list item should be used. Otherwise the
         //  the vertical/horizontal list item should be used.
@@ -47,12 +49,12 @@ class DogCardAdapter(
 
         // TODO: Null should not be passed into the view holder. This should be updated to reflect
         //  the inflated layout.
-        return DogCardViewHolder(null)
+        return CarCardViewHolder(null)
     }
 
     override fun getItemCount(): Int = 0 // TODO: return the size of the data set instead of 0
 
-    override fun onBindViewHolder(holder: DogCardViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CarCardViewHolder, position: Int) {
         // TODO: Get the data at the current position
         // TODO: Set the image resource for the current dog
         // TODO: Set the text for the current dog's name
