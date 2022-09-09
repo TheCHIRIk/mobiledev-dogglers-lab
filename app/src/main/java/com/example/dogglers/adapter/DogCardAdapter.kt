@@ -19,6 +19,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dogglers.R
@@ -42,20 +44,20 @@ class CarCardAdapter(
      */
     class CarCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         // TODO: Declare and initialize all of the list item UI components
-        @DrawableRes var carImage: Int = 0;
-        var carMake: String = "default_make";
-        var carYearReleased: String = "0 BC";
-        var carModel: String = "Dodge";
+        @DrawableRes var carImage: ImageView = view!!.findViewById(R.id.car_image)
+        var carMake: TextView = view!!.findViewById(R.id.car_make)
+        var carYearReleased: TextView = view!!.findViewById(R.id.car_year)
+        var carModel: TextView = view!!.findViewById(R.id.car_model)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarCardViewHolder {
         // TODO: Use a conditional to determine the layout type and set it accordingly.
         //  if the layout variable is Layout.GRID the grid list item should be used. Otherwise the
         //  the vertical/horizontal list item should be used.
-        return when (viewType){
+        return when (layout){
             Layout.GRID -> CarCardViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.grid_list_item, parent, false))
             Layout.VERTICAL, Layout.HORIZONTAL -> CarCardViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.vertical_horizontal_list_item, parent, false))
-            else -> throw IllegalArgumentException("Unsupported view type $viewType")
+            else -> throw IllegalArgumentException("Unsupported view type $layout")
         }
         // TODO Inflate the layout
 
@@ -67,9 +69,10 @@ class CarCardAdapter(
 
     override fun onBindViewHolder(holder: CarCardViewHolder, position: Int) {
         val car: Car = cars[position]
-        holder.carMake = car.make
-        holder.carImage = car.imageResourceId
-        holder.carYearReleased = car.yearReleased
+        holder.carMake.text = car.make
+        holder.carImage.setImageResource(car.imageResourceId)
+        holder.carYearReleased.text = car.yearReleased
+        holder.carModel.text = car.model
         val resources = context?.resources
         resources?.getString(R.string.car_yearReleased, car.yearReleased)
         resources?.getString(R.string.car_model, car.model)

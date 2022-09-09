@@ -28,20 +28,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- TODO: Note that this list item will be used in a grid view which requires a
-                different layout because the list will have two columns of cards.
-                This means that the information within the card must stack the vertically
-                since there is less room in terms of width.-->
+        <ImageView
+            android:id="@+id/car_image"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- TODO: Create an ImageView resource for the image of the dog.
-               The height should be 194dp
-               The width should match the with of the card
-               The scaleType should be set to centerCrop-->
+        <TextView
+            android:id="@+id/car_make"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Car make"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintTop_toBottomOf="@id/car_image"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="8dp" />
 
-        <!-- TODO: Create a TextView for each of the following:
-                The dog's name
-                The dog's age
-                The dog's hobbies-->
+        <TextView
+            android:id="@+id/car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Car model"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintTop_toBottomOf="@id/car_make"
+            app:layout_constraintStart_toStartOf="@+id/car_make"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/car_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Car year"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintTop_toBottomOf="@id/car_model"
+            app:layout_constraintStart_toStartOf="@id/car_model"
+            android:padding="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
