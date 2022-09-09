@@ -25,40 +25,40 @@ object DataSource {
 
     val cars: List<Car> = listOf(
         Car(
-            R.drawable.tzeitel,
-            "Tzeitel",
-            "7",
-            "sunbathing"
+            R.drawable.altima,
+            "Nissan",
+            "2020",
+            "Altima"
         ),
         Car(
-            R.drawable.leroy,
-            "Leroy",
-            "4",
-            "sleeping in dangerous places"
+            R.drawable.tundra,
+            "Toyota",
+            "2019",
+            "Tundra"
         ),
         Car(
-            R.drawable.frankie,
-            "Frankie",
-            "2",
-            "stealing socks"
+            R.drawable.silverado,
+            "Chevrolet",
+            "2015",
+            "Silverado"
         ),
         Car(
-            R.drawable.nox,
-            "Nox",
-            "8",
-            "meeting new animals"
+            R.drawable.camry,
+            "Toyota",
+            "2018",
+            "Camry"
         ),
         Car(
-            R.drawable.faye,
-            "Faye",
-            "8",
-            "Digging in the garden"
+            R.drawable.accord,
+            "Honda",
+            "2016",
+            "Accord"
         ),
         Car(
-            R.drawable.bella,
-            "Bella",
-            "14",
-            "Chasing sea foam"
+            R.drawable.f150,
+            "Ford",
+            "2017",
+            "F-150"
         )
     )
 }
