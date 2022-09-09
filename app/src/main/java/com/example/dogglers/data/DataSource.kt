@@ -16,45 +16,45 @@
 package com.example.dogglers.data
 
 import com.example.dogglers.R
-import com.example.dogglers.model.Dog
+import com.example.dogglers.model.Car
 
 /**
- * An object to generate a static list of dogs
+ * An object to generate a static list of cars
  */
 object DataSource {
 
-    val dogs: List<Dog> = listOf(
-        Dog(
+    val cars: List<Car> = listOf(
+        Car(
             R.drawable.tzeitel,
             "Tzeitel",
             "7",
             "sunbathing"
         ),
-        Dog(
+        Car(
             R.drawable.leroy,
             "Leroy",
             "4",
             "sleeping in dangerous places"
         ),
-        Dog(
+        Car(
             R.drawable.frankie,
             "Frankie",
             "2",
             "stealing socks"
         ),
-        Dog(
+        Car(
             R.drawable.nox,
             "Nox",
             "8",
             "meeting new animals"
         ),
-        Dog(
+        Car(
             R.drawable.faye,
             "Faye",
             "8",
             "Digging in the garden"
         ),
-        Dog(
+        Car(
             R.drawable.bella,
             "Bella",
             "14",

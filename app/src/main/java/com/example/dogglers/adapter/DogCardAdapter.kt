@@ -20,6 +20,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dogglers.model.Car
+import com.example.dogglers.data.DataSource
 
 /**
  * Adapter to inflate the appropriate list item layout and populate the view with information
@@ -31,7 +32,7 @@ class CarCardAdapter(
 ): RecyclerView.Adapter<CarCardAdapter.CarCardViewHolder>() {
 
     // TODO: Initialize the data using the List found in data/DataSource
-    val cars: List<Car> = listOf()
+    val cars: List<Car> = DataSource.cars
 
         /**
      * Initialize view elements
