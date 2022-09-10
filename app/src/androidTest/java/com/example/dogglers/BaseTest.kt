@@ -42,7 +42,7 @@ import java.lang.IllegalStateException
 
 open class BaseTest {
 
-    val lastPosition = DataSource.dogs.size - 1
+    val lastPosition = DataSource.cars.size - 1
 
     /**
      * Check the content of a card
@@ -52,12 +52,12 @@ open class BaseTest {
      * @param hobbies The full hobbies string as it appears on the screen
      * @param imageResource The image resource Id
      */
-    private fun hasListItemContent(name: String, age: String, hobbies: String, imageResource: Int) {
-        onView(withText(name))
+    private fun hasListItemContent(make: String, yearReleased: String, model: String, imageResource: Int) {
+        onView(withText(make))
             .check(matches(isDisplayed()))
-        onView(withText(age))
+        onView(withText(yearReleased))
             .check(matches(isDisplayed()))
-        onView(withText(hobbies))
+        onView(withText(model))
             .check(matches(isDisplayed()))
         onView(withDrawable(imageResource))
             .check(matches(isDisplayed()))
@@ -67,8 +67,8 @@ open class BaseTest {
      * Check the content of the first card
      */
     fun checkFirstPosition() {
-        hasListItemContent("Tzeitel", "7", "sunbathing",
-            R.drawable.tzeitel)
+        hasListItemContent("Nissan", "2020", "Altima",
+            R.drawable.altima)
     }
 
     /**

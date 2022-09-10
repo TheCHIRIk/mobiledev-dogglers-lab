@@ -44,21 +44,21 @@ class GridListTests : BaseTest() {
 
     @Test
     fun `grid_list_content_on_first_page`() {
-        onView(withText("Nox")).check(matches(isDisplayed()))
+        onView(withText("Tundra")).check(matches(isDisplayed()))
     }
 
     @Test
     fun `grid_list_content_at_last_position`() {
         onView(withId(R.id.grid_recycler_view))
             .perform(scrollToPosition<RecyclerView.ViewHolder>(lastPosition))
-        onView(withText("Bella")).check(matches(isDisplayed()))
+        onView(withText("Ford")).check(matches(isDisplayed()))
     }
 
     @Test
     fun `vertical_scrolling`() {
         onView(withId(R.id.grid_recycler_view))
             .perform(swipeUp())
-        onView(withText("Bella")).check(matches(isDisplayed()))
+        onView(withText("Camry")).check(matches(isDisplayed()))
     }
 
     @Test

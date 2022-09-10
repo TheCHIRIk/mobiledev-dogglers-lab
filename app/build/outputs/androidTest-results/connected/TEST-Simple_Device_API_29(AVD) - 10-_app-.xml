@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.example.dogglers.VerticalListTests" tests="4" failures="0" errors="0" skipped="0" time="3.454" timestamp="2022-09-10T01:16:05" hostname="localhost">
+  <properties>
+    <property name="device" value="Simple_Device_API_29(AVD) - 10" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="recycler_view_item_count" classname="com.example.dogglers.VerticalListTests" time="0.35" />
+  <testcase name="vertical_scroll_content_at_last_position" classname="com.example.dogglers.VerticalListTests" time="0.225" />
+  <testcase name="vertical_scrolling" classname="com.example.dogglers.VerticalListTests" time="0.445" />
+  <testcase name="vertical_scroll_content_at_first_position" classname="com.example.dogglers.VerticalListTests" time="0.146" />
+</testsuite>

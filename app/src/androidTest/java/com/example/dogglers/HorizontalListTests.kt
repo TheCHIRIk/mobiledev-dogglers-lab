@@ -18,6 +18,7 @@ package com.example.dogglers
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.swipeLeft
+import androidx.test.espresso.action.ViewActions.swipeRight
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -46,14 +47,14 @@ class HorizontalListTests : BaseTest() {
     fun `horizontal_scroll_content_at_last_position`() {
         onView(withId(R.id.horizontal_recycler_view))
             .perform(scrollToPosition<RecyclerView.ViewHolder>(lastPosition))
-        onView(withText("Bella")).check(matches(isDisplayed()))
+        onView(withText("Ford")).check(matches(isDisplayed()))
     }
 
     @Test
     fun `horizontal_scrolling`() {
         onView(withId(R.id.horizontal_recycler_view))
             .perform(swipeLeft())
-        onView(withText("Frankie")).check(matches(isDisplayed()))
+        onView(withText("Silverado")).check(matches(isDisplayed()))
     }
 
     @Test
